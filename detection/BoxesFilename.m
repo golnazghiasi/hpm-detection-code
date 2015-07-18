@@ -3,10 +3,11 @@ function filename = BoxesFilename(options)
 
 filename = [options.cachedir options.experiment_name '_' options.test_name ...
 			'_boxes' '_interval' num2str(options.interval) '_incOB'];
+options.occ_bias_inc = floor((options.occ_bias_inc + eps) * 100);
 if(options.occ_bias_inc<0)
     filename = [filename 'n'];
 end
-filename = [filename num2str(abs(options.occ_bias_inc) * 100)];
+filename = [filename num2str(abs(options.occ_bias_inc))];
 if isfield(options,'overlap_threshold')
     filename = [filename '_ov' num2str(floor(options.overlap_threshold * 10))];
 end

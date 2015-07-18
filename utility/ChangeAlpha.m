@@ -9,7 +9,7 @@ testres_filenames = cell(1,0);
 legend_names      = cell(1,0);
 
 modelo = model;
-pvalues = ([-.3:0.1:0.3]);
+pvalues = ([-.6:0.1:0.3]);
 for occ_bias_inc = pvalues
     options.occ_bias_inc = occ_bias_inc;
     filename = BoxesFilename(options);
